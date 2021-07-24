@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './fizz_buzz' # 他のファイルの読み込み
+require './lib/fizz_buzz' # 他のファイルの読み込み
 
 class FizzBuzzTest < Minitest::Test
   def test_fizz_buzz
@@ -12,3 +12,7 @@ class FizzBuzzTest < Minitest::Test
     assert_equal 'Fizz Buzz', fizz_buzz(15)
   end
 end
+
+# ターミナルで
+# ruby test/fizz_buzz_test.rb
+# を入力し、実行
