@@ -68,3 +68,23 @@ num3 .each do |n|
 end
 
 p sum
+
+
+puts '---------------------------'
+
+
+=begin
+
+ do...endと{}
+
+・改行を含む長いブロックを書く場合はdo...end
+・1行でコンパクトに書きたい時は{}
+
+=end
+
+
+numbers = [1, 2, 3, 4]
+sum = 0
+numbers.each { |n| sum += n }
+
+p sum
