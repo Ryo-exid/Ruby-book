@@ -55,3 +55,16 @@ num2.delete_if do |n|
   n.odd?
 end
 p num2
+
+puts '---------------------------'
+
+
+# 偶数のみ値を10倍にしてから加算するコード
+num3 = [1, 2, 3, 4]
+sum = 0
+num3 .each do |n|
+  sum_value = n.even? ? n * 10 : n # 条件演算子
+  sum += sum_value
+end
+
+p sum
