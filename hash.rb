@@ -35,3 +35,9 @@ end
 
 
 puts '③---------------------------'
+
+
+# 要素の削除
+currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
+currencies.delete('japan')
+p currencies
