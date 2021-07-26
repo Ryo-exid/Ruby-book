@@ -40,3 +40,16 @@ def buy_burger(menu, options = {})
 end
 p buy_burger('cheese', drink: true, potato: true)
 p buy_burger('fish', salad: true) # 擬似キーワード引数はどんな値を渡してもエラーにならない（無効なキーをエラーにするには明示的な実装が必要）
+
+
+puts '③---------------------------'
+
+
+# 任意のキーワードを受け付ける**引数
+def buy_burger(menu, drink: true, potato: true, **others)
+  # othersはハッシュとして渡される
+  puts others
+
+  # 省略
+end
+p buy_burger('fish', drink: true, potato: false, salad: true, chiken: false) #=> {:salad=>true, :chiken=>false}
