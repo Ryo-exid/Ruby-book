@@ -57,4 +57,4 @@ p %i(hello\ngood-bye #{name.upcase}) #=> [:"hello\\ngood-bye", :"\#{name.upcase}
 
 
 # %Iでは改行文字や式展開の構文が有効になった上でシンボルが作られる
-p %i(hello\ngood-bye #{name.upcase}) #=> 
+p %I(hello\ngood-bye #{name.upcase}) #=> [:"hello\ngood-bye", :ALICE]
