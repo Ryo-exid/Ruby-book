@@ -15,3 +15,13 @@ p currencies.values #=> ["yen", "dollar", "rupee"]
 currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
 p currencies.has_key?(:japan) #=> true
 p currencies.has_key?(:italy) #=> false
+
+
+puts '①---------------------------'
+
+
+# **でハッシュを展開させる
+
+h = { us: 'dollar', india: 'rupee' }
+# 変数hのキーと値を**で展開（**を付けない場合は構文エラーになる）
+p g = { japan: 'yen', **h } #=> {:japan=>"yen", :us=>"dollar", :india=>"rupee"}
