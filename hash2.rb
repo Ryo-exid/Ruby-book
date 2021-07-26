@@ -53,3 +53,16 @@ def buy_burger(menu, drink: true, potato: true, **others)
   # 省略
 end
 p buy_burger('fish', drink: true, potato: false, salad: true, chiken: false) #=> {:salad=>true, :chiken=>false}
+
+
+puts '④---------------------------'
+
+
+# to_aメソッドを使ってハッシュを配列に変換
+currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
+p currencies.to_a #=> [[:japan, "yen"], [:us, "dollar"], [:india, "rupee"]]
+
+
+# to_hメソッドを呼ぶと、配列をハッシュに変換（ハッシュとして解析不能な配列に対して呼び起こすとエラーになるので注意）
+array = [[:japan, "yen"], [:us, "dollar"], [:india, "rupee"]]
+p array.to_h #=> {:japan=>"yen", :us=>"dollar", :india=>"rupee"}
