@@ -58,3 +58,19 @@ p %i(hello\ngood-bye #{name.upcase}) #=> [:"hello\\ngood-bye", :"\#{name.upcase}
 
 # %Iでは改行文字や式展開の構文が有効になった上でシンボルが作られる
 p %I(hello\ngood-bye #{name.upcase}) #=> [:"hello\ngood-bye", :ALICE]
+
+
+puts '③---------------------------'
+
+
+# to_symメソッド（エイリアスメソッドはintern）を使うと、文字列をシンボルに変換することが出来る
+
+string = 'apple'
+symbol = :apple
+
+p string.to_sym #=> :apple
+p string.to_sym == symbol #=> true
+
+
+# 反対に、シンボルを文字列に変換する場合はto_sメソッド（エイリアスメソッドはid2name）を使用
+p symbol.to_s #=> "apple"
