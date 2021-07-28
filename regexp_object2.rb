@@ -132,3 +132,22 @@ p $+ #=> "31"
 
 
 puts '⑦---------------------------'
+
+
+# Regexp.last_matchメソッドでマッチの結果を取得（$~のような組み込み変数より可読性が上がる）
+
+text = '私の誕生日は1900年1月11日です。'
+
+# =~演算子などを使うと、マッチした結果をRegexp.last_matchで取得できる
+text =~ /(\d+)年(\d+)月(\d+)日/
+
+p Regexp.last_match(0) #=> "1900年1月11日"
+
+# 1番目〜3番目のキャプチャを取得する
+p Regexp.last_match(1) #=> "1900"
+p Regexp.last_match(2) #=> "1"
+p Regexp.last_match(3) #=> "11"
+
+# 最後のキャプチャ文字列を取得する
+p Regexp.last_match(-1) #=> "11"
+
