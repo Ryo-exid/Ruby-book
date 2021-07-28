@@ -3,14 +3,14 @@ class User
     @name = name
   end
 
-  # self.を付けるとクラスメソッドになる
+  # self.を付けるとクラスメソッドになる（インスタンスに含まれるデータを使わないメソッドを定義したい場合）
   def self.create_users(names)
     names.map do |name|
       User.new(name)
     end
   end
 
-  # インスタンスメソッド
+  # インスタンスメソッド（インスタンスに含まれるデータ、つまり@nameなどのインスタンス変数を読み書きする場合に定義する）
   def hello
     "Hello, I am #{@name}"
   end
