@@ -32,3 +32,20 @@ when /^\d+-\d+-\d+$/
 end
 
 #=> 電話番号です
+
+
+puts '②---------------------------'
+
+
+# 正規表現オブジェクト作成時のオプション
+
+
+# iオプションを付けると大文字小文字を区別しない
+p 'HELLO' =~ /hello/i #=> 0
+
+# %rを使った場合も最後にオプションを付けられる
+p 'HELLO' =~ %r{hello}i #=> 0
+
+# Regexp.newを使う場合は、Regexp::IGNORECASEという定数を渡す
+regexp = Regexp.new('hello', Regexp::IGNORECASE)
+p 'HELLO' =~ regexp #=> 0
