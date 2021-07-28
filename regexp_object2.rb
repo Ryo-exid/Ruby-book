@@ -93,3 +93,15 @@ pattern = <<'TEXT' # バックスラッシュを特別扱いしないように'T
 TEXT
 regexp = Regexp.new(pattern, Regexp::EXTENDED)
 p '123-4567' =~ regexp #=> 0
+
+
+puts '⑤---------------------------'
+
+# オプションは同時に使うことが出来る
+
+# iオプションとmオプションを同時に扱う
+p "HELLO\nBYE" =~ /Hello.Bye/im #=> 0
+
+# Regexp.newを使う場合は|で連結する
+regexp = Regexp.new('Hello.Bye', Regexp::IGNORECASE | Regexp::MULTILINE)
+p "HELLO\nBYE" =~ regexp #=> 0
