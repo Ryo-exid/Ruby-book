@@ -52,8 +52,44 @@ regexp = Regexp.new('hello', Regexp::IGNORECASE)
 p 'HELLO' =~ regexp #=> 0
 
 
+puts '③---------------------------'
+
+
 # mオプション（任意の文字を示すドットが改行文字にもマッチするようになる）
 p "Hello\nBye" =~ /Hello.Bye/m #=> 0
 
 # Regexp.newを使う場合は、Regexp::MULTILINEという定数を渡す
 p "Hello\nBye" =~ regexp #=> 0
+
+
+puts '④---------------------------'
+
+
+# xオプション（半角スペースや改行文字）が無視され、#を使って正規表現中にコメントが書けるようになる
+
+regexp = /
+  \d{3} # 郵便番号の先頭3桁
+  -     # 区切り文字のハイフン
+  \d{4} # 郵便番号の末尾4桁
+/x
+p '123-4567' =~ regexp #=> 0
+
+
+# xオプションを付けているときに、区白文字を無視せず正規表現の一部として扱いたい場合はバックスラッシュでエスケープする
+
+regexp = /
+  \d{3} # 郵便番号の先頭3桁
+  \ # 半角スペースで区切る
+  \d{4} # 郵便番号の末尾4桁
+/x
+p '123 4567' =~ regexp #=> 0
+
+
+# Regexp.newを使う場合は、Regexp::EXTENDEDという定数を渡す
+pattern = <<'TEXT' # バックスラッシュを特別扱いしないように'TEXT'を使う
+  \d{3} # 郵便番号の先頭3桁
+  -     # 区切り文字のハイフン
+  \d{4} # 郵便番号の末尾4桁
+TEXT
+regexp = Regexp.new(pattern, Regexp::EXTENDED)
+p '123-4567' =~ regexp #=> 0
