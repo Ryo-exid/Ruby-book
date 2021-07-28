@@ -41,6 +41,7 @@ puts '②---------------------------'
 
 
 # iオプション（大文字と小文字を区別せずマッチする）
+
 p 'HELLO' =~ /hello/i #=> 0
 
 # %rを使った場合も最後にオプションを付けられる
@@ -49,3 +50,10 @@ p 'HELLO' =~ %r{hello}i #=> 0
 # Regexp.newを使う場合は、Regexp::IGNORECASEという定数を渡す
 regexp = Regexp.new('hello', Regexp::IGNORECASE)
 p 'HELLO' =~ regexp #=> 0
+
+
+# mオプション（任意の文字を示すドットが改行文字にもマッチするようになる）
+p "Hello\nBye" =~ /Hello.Bye/m #=> 0
+
+# Regexp.newを使う場合は、Regexp::MULTILINEという定数を渡す
+p "Hello\nBye" =~ regexp #=> 0
