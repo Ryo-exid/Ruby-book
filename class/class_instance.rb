@@ -39,3 +39,5 @@ p product.name #=> "A great movie"
 dvd = DVD.new('An awesome film')
 p dvd.name #=> "An awesome film"
 p dvd.upcase_name #=> "AN AWESOME FILM"
+
+# クラスインスタンス変数はインスタンスメソッド内で共有されることがなく、スーパークラスとサブクラスでも共有されることがない
