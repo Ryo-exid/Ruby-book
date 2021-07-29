@@ -1,4 +1,4 @@
-# ミュータブルなオブジェクト（文字列、配列、ハッシュ）であれば定数は変更できてしまう
+# ミュータブルなオブジェクト（文字列、配列、ハッシュなど）であれば定数は変更できてしまう
 
 class Product
   DEFAULT_PRICE = 0
@@ -25,3 +25,29 @@ p Product::SOME_NAMES #=> ["Foo", "Bar", "Baz", "Hoge"]
 # ハッシュに新しいキーと値を追加
 Product::SOME_PRICES['Hoge'] = 4000
 p Product::SOME_PRICES #=> {"Foo"=>1000, "Bar"=>2000, "Baz"=>3000, "Hoge"=>4000}
+
+
+# 一方、イミュータブルなオブジェクト（数値やシンボル、true/false）はfreezeする必要がない
+
+
+=begin
+
+
+# freezeで変更を防止する
+
+-----------------------------------------------------------
+class Priduct
+
+  # 配列と配列の中身を凍結
+  SOME_NAMES = ['Foo'.freeze, 'Bar'.freeze, 'Baz'.freeze].freeze
+  
+  # 何度もfreezeを書かない方法
+  SOME_NAMES = ['Foo', 'Bar', 'Baz'].map(&:freeze).freeze
+end
+
+# 中身までfreezeしているので破壊的な変更はできない
+Product::SOME_NAMES[0].upcase! #=> RuntimeError
+-----------------------------------------------------------
+
+
+=end
