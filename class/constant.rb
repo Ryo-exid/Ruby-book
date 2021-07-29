@@ -3,7 +3,7 @@
 class Product
   DEFAULT_PRICE = 0
 
-  # 再代入自体は成功してしまう すでに初期化済みである（warning: already initialized constant Product::DEFAULT_PRICE）と警告は表示される
+  # 再代入自体は成功してしまう ※すでに初期化済みである（warning: already initialized constant Product::DEFAULT_PRICE）と警告は表示される
   DEFAULT_PRICE = 1000
 
   NAME = 'A product'
@@ -36,11 +36,11 @@ p Product::SOME_PRICES #=> {"Foo"=>1000, "Bar"=>2000, "Baz"=>3000, "Hoge"=>4000}
 # freezeで変更を防止する
 
 -----------------------------------------------------------
-class Priduct
+class Product
 
   # 配列と配列の中身を凍結
   SOME_NAMES = ['Foo'.freeze, 'Bar'.freeze, 'Baz'.freeze].freeze
-  
+
   # 何度もfreezeを書かない方法
   SOME_NAMES = ['Foo', 'Bar', 'Baz'].map(&:freeze).freeze
 end
