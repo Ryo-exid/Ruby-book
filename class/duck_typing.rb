@@ -16,6 +16,7 @@ end
 class DVD < Product
   # 在庫があればtrueを返す
   def stock?
+    # （本当はデータベースに問い合わせるなどの処理が必要だがここでは省略）
     true
   end
 end
