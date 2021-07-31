@@ -8,3 +8,10 @@
 ・シングルトンオブジェクトのように扱って設定値などを保持する。
 
 =end
+
+# helloメソッドを持つGreeterモジュールを定義
+module Greeter
+  def hello
+    'hello'
+  end
+end
