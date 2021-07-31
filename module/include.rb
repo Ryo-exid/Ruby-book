@@ -23,7 +23,7 @@ class Product
 end
 
 class User
-  # こちらも同じようにinclude
+  # こちらも同じようにinclude（ミックスイン）
   include Logable
 
   def name
