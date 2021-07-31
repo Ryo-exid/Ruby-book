@@ -5,6 +5,7 @@
 # ログ出力用のメソッドを提供するモジュール
 # ログ出力できる（log + able）といういみでLogableという名前を付けた
 module Logable
+  private
   def log(text)
     puts "[LOG] #{text}"
   end
@@ -41,3 +42,7 @@ user = User.new
 p user.name
 #=> [LOG] name is called.
 #   "Alice"
+
+
+# モジュールをprivateにすれば、クラス外からは呼び出せないようになる
+# p product.log 'public?' #=> NoMethodError
