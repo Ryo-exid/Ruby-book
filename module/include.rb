@@ -44,5 +44,5 @@ p user.name
 #   "Alice"
 
 
-# モジュールをprivateにすれば、クラス外からは呼び出せないようになる
+# モジュールをprivateにすれば、クラス外からは呼び出せないようになる（privateを定義しなければpublicとして扱われるためクラス外からも呼び出せる。）
 # p product.log 'public?' #=> NoMethodError
