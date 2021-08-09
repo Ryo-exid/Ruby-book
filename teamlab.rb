@@ -17,6 +17,7 @@ p three_include().sum # 3で割り切れるか3が含まれる数字の合計を
 
 =begin
 
+
 def tribonacci_list(n, t0, t1, t2):
     tri = [t0, t1, t2]
     if n == 1:
