@@ -3,7 +3,7 @@ class User
     @name = name
   end
 
-  # self.を付けるとクラスメソッドになる（インスタンスに含まれるデータを使わないメソッドを定義したい場合）
+  # self.を付けるとクラスメソッドになる（ひとつひとつのインスタンスに含まれるデータは使わないメソッドを定義したい場合にクラスメソッドにする）
   def self.create_users(names)
     names.map do |name|
       User.new(name)
