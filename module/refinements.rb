@@ -4,7 +4,7 @@
 
 module StringShuffle
   # refinementsが目的なので、refineメソッドを使う
-  refine String do
+  refine String do # Stringクラスに対する変更
     def shuffle
       chars.shuffle.join
     end
