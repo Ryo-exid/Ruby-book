@@ -3,6 +3,7 @@ require './lib/fizz_buzz' # 他のファイルの読み込み
 
 class FizzBuzzTest < Minitest::Test
   def test_fizz_buzz
+    # require 'byebug'; byebug # byebugライブラリをrequireし、それからbyebugメソッドを実行 ※2行に分けても良い
     assert_equal '1', fizz_buzz(1)
     assert_equal '2', fizz_buzz(2)
     assert_equal 'Fizz', fizz_buzz(3)
