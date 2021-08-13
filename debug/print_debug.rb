@@ -1,4 +1,4 @@
-# printデバッグ実行例
+# printデバッグ実行例  ※printデバッグをした後はデバッグのために追加したコードを忘れずに削除する
 
 def to_hex(r, g, b)
   [r, g, b].inject('#') do |hex, n|
@@ -25,4 +25,17 @@ def greeting(country)
     puts 'other' # 偽の分岐に入ったことを確認
     'hello'
   end
+end
+
+
+# -----------------------------------------------------------------
+
+
+# printデバッグ/pとputsの使い分け（putsは戻り値がnilに、pは引数がそのまま戻り値になる）
+
+def calc_fare(ticket)
+  from = STATIONS.index(@name)
+  # to - fromの結果をターミナルに出力しつつ、変数distanceに代入
+  distance = p to - from
+  FARES[distance - 1]
 end
