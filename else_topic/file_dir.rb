@@ -5,7 +5,7 @@
 
 Fileクラス（requireなし）
 Dirクラス（requireなし）
-FileUtilsクラス
+FileUtilsモジュール
 Pathnameクラス
 
 
@@ -30,3 +30,10 @@ end
 File.open('./lib/hello_world.txt', 'w') do |f|
   f.puts 'Hello, world!'
 end
+
+
+# FileUtilsモジュールは基本的なファイル操作を集めたモジュール。
+require 'fileutils'
+
+# libディレクトリのhello_world.txtをhello.rbにRenameする
+FileUtils.mv('./lib/hello_world.txt', './lib/hello_world.rb')
