@@ -37,3 +37,20 @@ require 'fileutils'
 
 # libディレクトリのhello_world.txtをhello.rbにRenameする
 FileUtils.mv('./lib/hello_world.txt', './lib/hello_world.rb')
+
+
+# Pathnameはパス名をオブジェクト指向らしく扱うクラス
+require 'pathname'
+
+# カレントディレクトリ配下にあるlibディレクトリを表すオブジェクトを作る
+lib = Pathname.new('./lib')
+
+# ファイルか？
+p lib.file? #=> false
+
+# ディレクトリか?
+p lib.directory? #=> true
+
+# libディレクトリ配下にあるsample.txtへのパス文字列を作る（スラッシュは自動的に付与される）
+p lib.join('sample.txt').to_s
+#=> "./lib/sample.txt"
