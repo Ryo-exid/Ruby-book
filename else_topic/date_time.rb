@@ -3,3 +3,7 @@
 # Timeクラスで日時を表すオブジェクトを作成する
 time = Time.new(2017, 1, 31, 23, 30, 50)
 p time #=> 2017-01-31 23:30:50 +0000
+
+
+# dateライブラリをrequireするとDateクラスとDateTimeクラスが使えるようになる
+require 'date'
